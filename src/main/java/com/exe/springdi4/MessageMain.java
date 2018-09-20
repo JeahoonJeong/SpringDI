@@ -11,6 +11,7 @@ public class MessageMain {
 		
 		ServiceConsumer sc = (ServiceConsumer)context.getBean("serviceConsumer");
 		sc.consumserService();
+		
 	}
 
 }
