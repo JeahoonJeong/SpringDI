@@ -1,13 +1,23 @@
 package com.exe.springdi4;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("serviceConsumer")
 public class ServiceConsumer {
 	
-	
+	@Autowired
+	@Qualifier("messageService")
 	MessageService ms;
+	
+	@Autowired
 	TimeService ts;
+	
+	@Autowired
 	JobService js;
 
-	//积己磊 狼粮己 林涝
+	/*//积己磊 狼粮己 林涝
 	public ServiceConsumer(MessageService ms) {
 		this.ms = ms;
 	}
@@ -19,7 +29,7 @@ public class ServiceConsumer {
 	
 	public void setJobService(JobService js) {
 		this.js = js;
-	}
+	}*/
 	
 	public void consumserService() {
 			
