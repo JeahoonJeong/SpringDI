@@ -12,11 +12,17 @@
 	
 	<bean id="message" class="com.exe.springdi3.MessageKr"/>
 	
-	<bean id="messageService" class="com.exe.springdi4.MyMessageService"/>
+	<bean id="ms" class="com.exe.springdi4.MyMessageService"/>
+	
+	<bean id="ts" class="com.exe.springdi4.MyTimeService"/>
+	
+	<bean id="jobService" class="com.exe.springdi4.MyJobService"/>
 	
 	<bean id="serviceConsumer" 
-		class="com.exe.springdi4.ServiceConsumer">
-		<constructor-arg ref="messageService"/>	
+		class="com.exe.springdi4.ServiceConsumer" autowire="byName">
+		<constructor-arg ref="ms"/>	
+		<property name="timeService" ref="ts"/>
+		<!-- <property name="jobService" ref="jobService"/> -->
 	</bean>
 	
 </beans>
